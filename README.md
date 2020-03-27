@@ -1,0 +1,2 @@
+# Rei
+Discord Bot repo
