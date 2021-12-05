@@ -3,15 +3,21 @@ const Discord = require("discord.js");
 module.exports = {
 	name : 'Creator',
 	description: 'Shows creator info',
-	execute(message, args){
+    execute(message, args) {
+        let avatar = message.author.displayAvatarURL({ format: "png", dynamic: true });
+
+
       const embed = new Discord.MessageEmbed()
       .setColor('#FF0000')
       .setTitle('Creator info')
-      .setDescription('info of the bot creator')
-      .setThumbnail('https://discordapp.com/channels/559842234346766391/687770436637032618/692570819351543820')
-      .addField('Discord', 'AlexMango#7217', true)
-      .addField('Instagram', 'Alex_.1893', true)
-      .addField('Twitter', 'Alex_CorreiaG', true)
-      .addField(message.author.username, 'Has requested creator info', true)
+      .setDescription('Gets some links about the creator of the bot')
+      .setImage('https://cdn.discordapp.com/avatars/224258146078556160/cc2292a98625aa99eb8e0f9d33fc2e05.webp?size=2048')
+      .addField('Glitch.Com', 'https://glitch.com/@AlexGama11', true)
+      .addField('Github', 'https://github.com/AlexGama11', true)
+      .addField('Twitter', 'https://twitter.com/Alex_CorreiaG', true)
+      .addField('Itch.io', 'https://alexmango.itch.io', true)
+      .setFooter(`${message.author.username} requested info about the creator!`, avatar, true)
+      .setTimestamp()
       message.channel.send({embed});
-	  }}
+    }
+}

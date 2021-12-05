@@ -55,17 +55,6 @@ client.on("message", async message => {
 
     };
 
-    if(command === 'sus') {
-
-    client.commands.get('Sus').execute(message, args);
-
-    };
-
-    if(command === 'unsus') {
-
-    client.commands.get('Unsus').execute(message, args);
-
-    };
 
   if(command === "help") {
 
@@ -78,8 +67,6 @@ client.on("message", async message => {
     client.commands.get('Candeeiro').execute(message, args);
 
     };
-
-
 
   if(command === 'server') {
 
