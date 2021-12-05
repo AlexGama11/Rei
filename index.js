@@ -22,18 +22,6 @@ client.on("ready", () => {
   client.user.setActivity(`Use ;help to get a Command List`);
 });
 
-        client.on('message', msg=>{
-    	if(msg.content === "Mplay"){
-        msg .channel.send('Go fuck yourself <@391240294567378946>');
-        }});
-
-
-        client.on('message', message => {
-  if (message.content === 'ping') {  
-    message.channel.send(`:ping_pong: Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
-  }
-});
-
 
 
 client.on("message", async message => {
@@ -52,6 +40,12 @@ client.on("message", async message => {
   if(command === 'grimm') {
 
     client.commands.get('Grimm').execute(message, args);
+
+    };
+
+    if (command === 'ping') {
+
+        client.commands.get('Ping').execute(message, args);
 
     };
 
