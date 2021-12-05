@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const Discord = require("discord.js");
 const { prefix, token } = require('./config.json');
 const client = new Discord.Client(); 
@@ -19,27 +19,21 @@ client.on("ready", () => {
   
   console.log(`Rey Ayanami ready for departure.`); 
   
-  client.user.setActivity(`Use ?help to get a Command List`);
+  client.user.setActivity(`Use ;help to get a Command List`);
 });
 
-client.on('message', msg=>{
-    if(msg.content === "Hi"){
-	msg.reply('Hello There, my name is Rey Ayanami and I pilot Eva-00');
-    }});
-
-client.on('message', msg=>{
-    if(msg.content === "Waifu"){
-	msg.reply('Your waifu is trash');
-    }});
-
-client.on('message', msg=>{
-    	if(msg.content === "Fuck"){
-        msg.reply('You');
+        client.on('message', msg=>{
+    	if(msg.content === "Mplay"){
+        msg .channel.send('Go fuck yourself <@391240294567378946>');
         }});
 
-        client.on('guildMemberAdd', member =>{
-    member.send(`Welcome to our Server! Please read the rules!`)
-    }); 
+
+        client.on('message', message => {
+  if (message.content === 'ping') {  
+    message.channel.send(`:ping_pong: Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
+  }
+});
+
 
 
 client.on("message", async message => {
@@ -54,15 +48,22 @@ client.on("message", async message => {
   
   // Let's go with a few common example commands! Feel free to delete or change those.
 
-  if(command === "say") {
 
-    client.commands.get('Say').execute(message, args);
+  if(command === 'grimm') {
+
+    client.commands.get('Grimm').execute(message, args);
 
     };
 
-  if(command === 'crusade') {
+    if(command === 'sus') {
 
-    client.commands.get('Crusade').execute(message, args);
+    client.commands.get('Sus').execute(message, args);
+
+    };
+
+    if(command === 'unsus') {
+
+    client.commands.get('Unsus').execute(message, args);
 
     };
 
@@ -78,17 +79,6 @@ client.on("message", async message => {
 
     };
 
-  if(command === 'kill') {
-
-    client.commands.get('Kill').execute(message, args);
-
-    };
-
-    if(command === 'kick') {
-
-    client.commands.get('Kick').execute(message, args);
-
-    };
 
 
   if(command === 'server') {
@@ -97,51 +87,10 @@ client.on("message", async message => {
 
 	}
 
-  if(command === 'memberinfo') {
-
-    client.commands.get('Member').execute(message, args);
-
-    }
-
-  if (command === 'prune') {
-
-	client.commands.get('Prune').execute(message, args);
-
-    }
 
    if (command === 'avatar') {
 
 	client.commands.get('Avatar').execute(message, args);
-
-    }
-
-   if (command === 'ban') {
-
-	client.commands.get('Ban').execute(message, args);
-
-    }
-    
-    if (command === 'stop') {
-
-	client.commands.get('Stop').execute(message, args);
-
-    }
-
-    if (command === 'play') {
-
-	client.commands.get('Play').execute(message, args);
-
-    }
-
-    if (command === 'nowplaying') {
-
-	client.commands.get('NowPlaying').execute(message, args);
-
-    }
-
-    if (command === 'skip') {
-
-	client.commands.get('Skip').execute(message, args);
 
     }
 
