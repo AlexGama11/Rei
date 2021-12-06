@@ -19,7 +19,7 @@ client.on("ready", () => {
   
   console.log(`Rey Ayanami ready for departure.`); 
   
-  client.user.setActivity(`Use ;help to get a Command List`);
+  client.user.setActivity(`Use ?help to get a Command List`);
 });
 
 
