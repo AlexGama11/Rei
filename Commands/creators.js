@@ -9,7 +9,7 @@ module.exports =
 
         let avatar = interaction.user.displayAvatarURL({ dynamic: true, size: 1024 });
 
-            const avatarEmbed = new MessageEmbed()
+            const creatorEmbed = new MessageEmbed()
                 .setColor('#030451')
                 .setTitle(`Creator info`)
                 .setDescription('Gets some profile links of the bot creators')
@@ -19,7 +19,7 @@ module.exports =
                 .setFooter(`${interaction.user.username} requested info about the bot creators`, avatar, true)
                 .setTimestamp()
 
-            await interaction.reply({ embeds: [avatarEmbed] });
+            await interaction.reply({ embeds: [creatorEmbed] });
     },
 
     data: new SlashCommandBuilder()
