@@ -21,6 +21,9 @@
   "dependencies": {
     "@discordjs/rest": "^0.1.0-canary.0",
     "discord-api-types": "^0.25.2",
-    "discord.js": "^13.3.1"
+    "discord.js": "^13.3.1",
+    "dist": "^0.1.2",
+    "i": "^0.3.7",
+    "uglify-js": "^3.14.4"
   }
 }
