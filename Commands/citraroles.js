@@ -40,77 +40,67 @@ module.exports =
 
 		//================================================================================================================================//
 
-		const tRow = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('tRow')
-					.setLabel('Trader Roles')
-					.setStyle('PRIMARY'),
-		);
+		const initial = new MessageActionRow()
+		.addComponents(
+			new MessageButton()
+				.setCustomId('tRow')
+				.setLabel('Trader Roles')
+				.setStyle('PRIMARY'),
+		)
+		.addComponents(
+			new MessageButton()
+				.setCustomId('bRow')
+				.setLabel('Battler Roles')
+				.setStyle('PRIMARY'),
+		)
 
-		const bRow = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('bRow')
-					.setLabel('Battler Roles')
-					.setStyle('PRIMARY'),
-		);
 		//================================================================================================================================//
 
 
-		const tg6 = new MessageActionRow()
+		const trader = new MessageActionRow()
 			.addComponents(
 				new MessageButton()
 					.setCustomId('tg6')
 					.setLabel('Trader Gen 6')
 					.setStyle('SECONDARY'),
-		);
-
-		const tg7 = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('tg7')
-					.setLabel('Trader Gen 7')
-					.setStyle('SECONDARY'),
-		);
-
-		const tg8 = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('tg8')
-					.setLabel('Trader Gen 8')
-					.setStyle('SECONDARY'),
-		);
+		)
+		.addComponents(
+			new MessageButton()
+				.setCustomId('tg7')
+				.setLabel('Trader Gen 7')
+				.setStyle('SECONDARY'),
+		)
+		.addComponents(
+			new MessageButton()
+				.setCustomId('tg8')
+				.setLabel('Trader Gen 8')
+				.setStyle('SECONDARY'),
+		)
 
 		//================================================================================================================================//
 
-		const bg6 = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('bg6')
-					.setLabel('Battler Gen 6')
-					.setStyle('SECONDARY'),
-		);
-
-		const bg7 = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('bg7')
-					.setLabel('Battler Gen 7')
-					.setStyle('SECONDARY'),
-		);
-
-		const bg8 = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('bg8')
-					.setLabel('Battler Gen 8')
-					.setStyle('SECONDARY'),
-		);
+		const battler = new MessageActionRow()
+		.addComponents(
+			new MessageButton()
+				.setCustomId('bg6')
+				.setLabel('Battler Gen 6')
+				.setStyle('SECONDARY'),
+		)
+		.addComponents(
+			new MessageButton()
+				.setCustomId('bg7')
+				.setLabel('Battler Gen 7')
+				.setStyle('SECONDARY'),
+		)
+		.addComponents(
+			new MessageButton()
+				.setCustomId('bg8')
+				.setLabel('Battler Gen 8')
+				.setStyle('SECONDARY'),
+		)
 
 
-
-		await interaction.reply({ ephemeral: true, embeds: [rolesEmbed], components: [tRow, bRow] });
+		await interaction.reply({ ephemeral: true, embeds: [rolesEmbed], components: [initial] });
 
 		const filter = i => i.user.id === interaction.user.id;
 
@@ -119,11 +109,11 @@ module.exports =
 		collector.on('collect', async i => {
 
 			if (i.customId === 'tRow') {
-				i.reply({ ephemeral: true, embeds: [tRolesEmbed], components: [tg6, tg7, tg8] });
+				i.reply({ ephemeral: true, embeds: [tRolesEmbed], components: [trader] });
 			}
 
 			if (i.customId === 'bRow') {
-				i.reply({ ephemeral: true, embeds: [bRolesEmbed], components: [bg6, bg7, bg8] });
+				i.reply({ ephemeral: true, embeds: [bRolesEmbed], components: [battler] });
 			}
 
 			if (i.customId === 'tg6') {
