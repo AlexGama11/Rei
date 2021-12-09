@@ -25,7 +25,7 @@ module.exports =
 			.setTitle(`Choose your role`)
 			.setDescription('Here are the trading roles you can choose in CitraPSS')
 			.setThumbnail('https://cdn.discordapp.com/icons/592003559243907072/d96e0a691a3bba148f3ad91d286a36d4.webp?size=2048')
-			.addField(`Roles`, '- TraderGen6\n- TraderGen7\n- TraderGen8\n', true)
+			.addField(`Click a button below to grant the role!`, '\u200b', false)
 			.setFooter(`${interaction.user.username} wishes to get a role`, avatar, true)
 			.setTimestamp()
 
@@ -34,7 +34,7 @@ module.exports =
 			.setTitle(`Choose your role`)
 			.setDescription('Here are the battling roles you can choose in CitraPSS')
 			.setThumbnail('https://cdn.discordapp.com/icons/592003559243907072/d96e0a691a3bba148f3ad91d286a36d4.webp?size=2048')
-			.addField(`Roles`, '- BattlerGen6\n- BattlerGen7\n- BattlerGen8', true)
+			.addField(`Click a button below to grant the role!`, '\u200b', false)
 			.setFooter(`${interaction.user.username} wishes to get a role`, avatar, true)
 			.setTimestamp()
 
@@ -58,11 +58,23 @@ module.exports =
 
 
 		const trader = new MessageActionRow()
-			.addComponents(
-				new MessageButton()
-					.setCustomId('tg6')
-					.setLabel('Trader Gen 6')
-					.setStyle('SECONDARY'),
+		.addComponents(
+			new MessageButton()
+				.setCustomId('tg4')
+				.setLabel('Trader Gen 4')
+				.setStyle('SECONDARY'),
+		)
+		.addComponents(
+			new MessageButton()
+				.setCustomId('tg5')
+				.setLabel('Trader Gen 5')
+				.setStyle('SECONDARY'),
+		)
+		.addComponents(
+			new MessageButton()
+				.setCustomId('tg6')
+				.setLabel('Trader Gen 6')
+				.setStyle('SECONDARY'),
 		)
 		.addComponents(
 			new MessageButton()
@@ -80,6 +92,18 @@ module.exports =
 		//================================================================================================================================//
 
 		const battler = new MessageActionRow()
+		.addComponents(
+			new MessageButton()
+				.setCustomId('bg4')
+				.setLabel('Battler Gen 4')
+				.setStyle('SECONDARY'),
+		)
+		.addComponents(
+			new MessageButton()
+				.setCustomId('bg5')
+				.setLabel('Battler Gen 5')
+				.setStyle('SECONDARY'),
+		)
 		.addComponents(
 			new MessageButton()
 				.setCustomId('bg6')
