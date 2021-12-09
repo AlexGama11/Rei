@@ -43,7 +43,7 @@ module.exports =
 		const tRow = new MessageActionRow()
 			.addComponents(
 				new MessageButton()
-					.setCustomId('Trader')
+					.setCustomId('tRow')
 					.setLabel('Trader Roles')
 					.setStyle('PRIMARY'),
 		);
@@ -51,7 +51,7 @@ module.exports =
 		const bRow = new MessageActionRow()
 			.addComponents(
 				new MessageButton()
-					.setCustomId('Battler')
+					.setCustomId('bRow')
 					.setLabel('Battler Roles')
 					.setStyle('PRIMARY'),
 		);
